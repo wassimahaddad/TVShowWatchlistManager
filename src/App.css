@@ -8,3 +8,19 @@ body {
   background-color: black;
   color: #999;
 }
+
+.search-results-container {
+  width: 100vw;
+}
+
+.search-result {
+  width: 60%;
+  border: 1px solid grey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+.search-result-poster {
+  width: 300px;
+  padding: 10px;
+}
