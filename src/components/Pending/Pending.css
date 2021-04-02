@@ -1,0 +1,15 @@
+.pending-episodes-text {
+  width: 50%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  color: goldenrod;
+}
+.pending-episodes {
+  width: 50%;
+  height: 30vh;
+  border-top: 1px solid grey;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}

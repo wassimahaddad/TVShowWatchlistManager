@@ -1,19 +1,31 @@
 import React from "react";
-const posterPath = "https://image.tmdb.org/t/p/original";
+import API from "../../API/addresses";
+
+import defaultPoster from "../../Assets/img/default-poster.jpg";
+import "./Show.css";
+
 const Show = ({ result }) => {
   return (
     <div className="search-result">
       <img
-        key={result.id}
         className="search-result-poster"
-        src={posterPath + result.poster_path}
+        src={
+          result.poster_path
+            ? API.posterPath + result.poster_path
+            : defaultPoster
+        }
         alt="poster"
       />
+
       <div>
         <div className="search-result-info">
+          <div className="result-title">
+            <span>Title: </span>
+            {result.name}
+          </div>
           <div className="result-overview">
             <span>Overview: </span>
-            {result.overview}
+            {result.overview !== "" ? result.overview : API.defaultOverview}
           </div>
           <div className="result-first-aired">
             <span>First aired: </span>
