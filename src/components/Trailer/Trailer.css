@@ -1,0 +1,7 @@
+.result-trailer {
+  display: inline-flex;
+  width: calc(100% - 300px);
+  justify-content: center;
+  vertical-align: top;
+  margin-top: 7%;
+}

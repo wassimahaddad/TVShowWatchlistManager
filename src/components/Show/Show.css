@@ -1,31 +1,8 @@
-.search-results-container {
-  width: 100vw;
-}
-
-.search-result {
-  display: flex;
-  width: 60%;
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
-}
-
-.search-result-poster {
-  width: 300px;
-  padding: 10px;
-}
-
-.search-result-info {
-  height: 90%;
-  padding: 10px;
-  font-size: 18px;
-}
-
 .show-result-buttons {
   display: flex;
   justify-content: center;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
 }
 .add-to-watchlist,
 .simillar-shows,
@@ -45,14 +22,4 @@
 }
 .watch-trailer {
   border-radius: 0;
-}
-
-span {
-  font-weight: bold;
-  color: goldenrod;
-}
-
-.result-overview,
-.result-first-aired {
-  margin-top: 20px;
 }

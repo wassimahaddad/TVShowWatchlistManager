@@ -1,0 +1,29 @@
+.search-results-container {
+  width: 100vw;
+}
+
+.search-result {
+  /* display: flex; */
+  width: 60%;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  background-color: #111;
+}
+
+.search-result-info {
+  height: 90%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+span {
+  font-weight: bold;
+  color: goldenrod;
+}
+
+.result-overview,
+.result-first-aired {
+  margin-top: 20px;
+}
