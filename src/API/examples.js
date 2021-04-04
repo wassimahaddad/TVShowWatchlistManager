@@ -187,3 +187,60 @@ const data = {
   vote_average: 7.4,
   vote_count: 1912,
 };
+
+// --------------------------------
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+const App = () => {
+  const API =
+    "https://60659f61b8fbbd0017566dda.mockapi.io/IncomesAndExpenses/users";
+  const userId = 1;
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Page2">Page2</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/Page2">
+            <Page2 />
+          </Route>
+          <Route path="/">
+            <Page1 API={API} userId={userId} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
+
+<div>
+  <BrowserRouter>
+    <Navbar />
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/Watchlist" exact>
+        <Watchlist />
+      </Route>
+      <Route path="/Search">
+        <Search />
+      </Route>
+      <Route path="/Pending" exact>
+        <Pending />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+</div>;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Show from "../Show/Show";
-import API from "../../API/addresses";
+import tmdb from "../../API/TMDB";
 import "./Search.css";
-const Search = () => {
+const Search = ({ number, handleNumber }) => {
   const searchBar = useRef();
   const [term, setTerm] = useState("");
   const [results, setResults] = useState();
@@ -11,7 +11,7 @@ const Search = () => {
   useEffect(() => {
     searchBar.current.focus();
     const getShowData = async () => {
-      const response = await axios.get(API.search + term);
+      const response = await axios.get(tmdb.search + term);
       setResults(response.data.results);
       console.log(response.data.results);
     };
@@ -44,7 +44,11 @@ const Search = () => {
         {results
           ? results.map((result) => (
               <React.Fragment key={result.id}>
-                <Show result={result} />
+                <Show
+                  result={result}
+                  number={number}
+                  handleNumber={handleNumber}
+                />
               </React.Fragment>
             ))
           : null}

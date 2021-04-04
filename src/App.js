@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
@@ -9,14 +9,26 @@ import Watchlist from "./components/Watchlist/Watchlist";
 import "./App.css";
 
 const App = () => {
+  const [number, setNumber] = useState(0);
+  const handleNumber = () => {
+    setNumber(number + 1);
+  };
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        <Route path="/" exact component={Home} />
-        <Route path="/Watchlist" exact component={Watchlist} />
-        <Route path="/Search" exact component={Search} />
-        <Route path="/Pending" exact component={Pending} />
+        <Navbar number={number} />
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/Watchlist" exact>
+          <Watchlist number={number} />
+        </Route>
+        <Route path="/Search">
+          <Search number={number} handleNumber={handleNumber} />
+        </Route>
+        <Route path="/Pending" exact>
+          <Pending />
+        </Route>
       </BrowserRouter>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import defaultPoster from "../../Assets/img/default-poster.jpg";
-import API from "../../API/addresses";
+import tmdb from "../../API/TMDB";
 import "./Poster.css";
 const Poster = ({ result }) => {
   return (
@@ -8,7 +8,7 @@ const Poster = ({ result }) => {
       <img
         src={
           result.poster_path
-            ? API.posterPath + result.poster_path
+            ? tmdb.posterPath + result.poster_path
             : defaultPoster
         }
         alt="poster"

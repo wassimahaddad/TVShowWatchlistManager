@@ -17,3 +17,7 @@
 .navbar > a:hover {
   color: white;
 }
+
+.watchlist-number {
+  font-weight: normal;
+}

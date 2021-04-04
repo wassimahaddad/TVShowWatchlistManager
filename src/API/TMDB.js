@@ -1,4 +1,4 @@
-const API = {
+const tmdb = {
   apiKey: "?api_key=f656551bdd5ebdb168235db96894f77a",
   baseUrl: "https://api.themoviedb.org/3/tv/",
   posterPath: "https://image.tmdb.org/t/p/original",
@@ -9,4 +9,4 @@ const API = {
   defaultTrailer: "Trailer not available for this show",
 };
 
-export default API;
+export default tmdb;

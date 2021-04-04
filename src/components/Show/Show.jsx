@@ -3,10 +3,11 @@ import "./Show.css";
 import Trailer from "../Trailer/Trailer";
 import Poster from "../Poster/Poster";
 import BasicInfo from "../BasicInfo/BasicInfo";
-import API from "../../API/addresses";
+import tmdb from "../../API/TMDB";
+import MockAPI from "../../API/MockAPI";
 import axios from "axios";
 
-const Show = ({ result }) => {
+const Show = ({ result, number, handleNumber }) => {
   const [trailerSuffix, setTrailerSuffix] = useState();
   const [noTrailer, setNoTrailer] = useState();
   const [data, setData] = useState({});
@@ -14,7 +15,7 @@ const Show = ({ result }) => {
   // --------------------------------------------------------------------
   const getShowDetails = async (e) => {
     const response = await axios.get(
-      `${API.baseUrl}${result.id}${API.apiKey}${API.appendVideo}`
+      `${tmdb.baseUrl}${result.id}${tmdb.apiKey}${tmdb.appendVideo}`
     );
     console.log(response.data);
     setData(response.data);
@@ -25,19 +26,19 @@ const Show = ({ result }) => {
     if (data === {} || result.id !== data.id) {
       const response = await getShowDetails();
       console.log(response);
-      if (response.videos.results[0]) {
-        setTrailerSuffix(response.videos.results[0].key);
-      } else {
-        setNoTrailer(API.defaultTrailer);
-      }
+      // ------------
+      response.videos.results[0]
+        ? setTrailerSuffix(response.videos.results[0].key)
+        : setNoTrailer(tmdb.defaultTrailer);
+      // ------------
       setClickedButton(e.target.name);
       console.log(e.target.name);
     } else {
-      if (data.videos.results[0]) {
-        setTrailerSuffix(data.videos.results[0].key);
-      } else {
-        setNoTrailer(API.defaultTrailer);
-      }
+      // ------------
+      data.videos.results[0]
+        ? setTrailerSuffix(data.videos.results[0].key)
+        : setNoTrailer(tmdb.defaultTrailer);
+      // ------------
       setClickedButton(e.target.name);
     }
   };
@@ -46,9 +47,12 @@ const Show = ({ result }) => {
     if (data === {} || result.id !== data.id) {
       const response = await getShowDetails();
       console.log(response);
+      MockAPI.post("/library/tvshows", { ...response });
     } else {
       console.log(data.name);
+      MockAPI.post("/library/tvshows", { ...data });
     }
+    handleNumber();
   };
   // --------------------------------------------------------------------
   return (

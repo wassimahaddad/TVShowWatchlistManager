@@ -1,6 +1,6 @@
 import React from "react";
 import "./BasicInfo.css";
-import API from "../../API/addresses";
+import tmdb from "../../API/TMDB";
 
 const BasicInfo = ({ result }) => {
   return (
@@ -11,13 +11,13 @@ const BasicInfo = ({ result }) => {
       </div>
       <div className="result-overview">
         <span>Overview: </span>
-        {result.overview !== "" ? result.overview : API.defaultOverview}
+        {result.overview !== "" ? result.overview : tmdb.defaultOverview}
       </div>
       <div className="result-first-aired">
         <span>First aired: </span>
         {result.first_air_date !== ""
           ? result.first_air_date
-          : API.defaultFirstAired}
+          : tmdb.defaultFirstAired}
       </div>
       <div className="result-average-vote">
         <span>Average vote: </span>
