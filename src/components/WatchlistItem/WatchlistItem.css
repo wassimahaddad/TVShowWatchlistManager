@@ -1,0 +1,30 @@
+.watchlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #333;
+  border-radius: 10px;
+  width: 250px;
+  height: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.watchlist-item-poster {
+  width: 90%;
+}
+.watchlist-item img {
+  max-width: 100%;
+}
+
+.watchlist-item-button {
+  margin-top: 2px;
+  font-size: 18px;
+  width: 90%;
+  padding: 3px;
+}
+
+.watchlist-item-button:focus {
+  outline: none;
+}

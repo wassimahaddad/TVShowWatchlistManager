@@ -29,3 +29,13 @@
 .watch-trailer {
   border-radius: 0;
 }
+
+.search-result-poster {
+  display: inline-flex;
+  width: 300px;
+  padding: 10px;
+}
+
+.search-result-poster > img {
+  max-width: 100%;
+}

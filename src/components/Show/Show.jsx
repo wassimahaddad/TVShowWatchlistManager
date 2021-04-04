@@ -57,7 +57,7 @@ const Show = ({ result, number, handleNumber }) => {
   // --------------------------------------------------------------------
   return (
     <div className="search-result">
-      <Poster result={result} />
+      <Poster className="search-result-poster" result={result} />
 
       <div className="result-trailer">
         {trailerSuffix && clickedButton === "trailer" ? (

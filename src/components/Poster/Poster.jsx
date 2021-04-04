@@ -2,9 +2,9 @@ import React from "react";
 import defaultPoster from "../../Assets/img/default-poster.jpg";
 import tmdb from "../../API/TMDB";
 import "./Poster.css";
-const Poster = ({ result }) => {
+const Poster = ({ result, className }) => {
   return (
-    <div className="search-result-poster">
+    <div className={className}>
       <img
         src={
           result.poster_path

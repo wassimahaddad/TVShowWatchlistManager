@@ -15,7 +15,7 @@ const Watchlist = ({ number }) => {
   }, [number]);
   console.log("data=", data);
   return (
-    <div>
+    <div className="watchlist-items">
       {data
         ? data.map((result) => (
             <div key={result.id}>
