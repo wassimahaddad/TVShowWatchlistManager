@@ -10,8 +10,8 @@ import "./App.css";
 
 const App = () => {
   const [number, setNumber] = useState(0);
-  const handleNumber = () => {
-    setNumber(number + 1);
+  const handleNumber = (num) => {
+    setNumber(num);
   };
   return (
     <div>
@@ -21,7 +21,7 @@ const App = () => {
           <Home />
         </Route>
         <Route path="/Watchlist" exact>
-          <Watchlist number={number} />
+          <Watchlist handleNumber={handleNumber} />
         </Route>
         <Route path="/Search">
           <Search number={number} handleNumber={handleNumber} />

@@ -7,11 +7,12 @@ import tmdb from "../../API/TMDB";
 import MockAPI from "../../API/MockAPI";
 import axios from "axios";
 
-const Show = ({ result, number, handleNumber }) => {
+const Show = ({ result, handleNumber }) => {
   const [trailerSuffix, setTrailerSuffix] = useState();
   const [noTrailer, setNoTrailer] = useState();
   const [data, setData] = useState({});
   const [clickedButton, setClickedButton] = useState("");
+
   // --------------------------------------------------------------------
   const getShowDetails = async (e) => {
     const response = await axios.get(
@@ -43,16 +44,22 @@ const Show = ({ result, number, handleNumber }) => {
     }
   };
   // --------------------------------------------------------------------
+  const getWtachlistNumber = async () => {
+    const response = await MockAPI.get("/library/tvshows");
+    handleNumber(response.data.length);
+  };
+  // --------------------------------------------------------------------
   const AddToWatchlist = async () => {
     if (data === {} || result.id !== data.id) {
       const response = await getShowDetails();
       console.log(response);
-      MockAPI.post("/library/tvshows", { ...response });
+      await MockAPI.post("/library/tvshows", { ...response });
+      getWtachlistNumber();
     } else {
       console.log(data.name);
-      MockAPI.post("/library/tvshows", { ...data });
+      await MockAPI.post("/library/tvshows", { ...data });
+      getWtachlistNumber();
     }
-    handleNumber();
   };
   // --------------------------------------------------------------------
   return (

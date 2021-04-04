@@ -3,16 +3,18 @@ import MockAPI from "../../API/MockAPI";
 import "./Watchlist.css";
 import WatchlistItem from "../WatchlistItem/WatchlistItem";
 
-const Watchlist = ({ number }) => {
+const Watchlist = ({ handleNumber }) => {
   const [data, setData] = useState();
   useEffect(() => {
     const getWtachlist = async () => {
       const response = await MockAPI.get("/library/tvshows");
       setData(response.data);
       console.log("response=", response.data);
+      console.log(response.data.length);
+      handleNumber(response.data.length);
     };
     getWtachlist();
-  }, [number]);
+  }, [handleNumber]);
   console.log("data=", data);
   return (
     <div className="watchlist-items">
