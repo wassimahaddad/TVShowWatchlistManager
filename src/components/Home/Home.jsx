@@ -1,7 +1,13 @@
 import React from "react";
+import MockAPI from "../../API/MockAPI";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ handleNumber }) => {
+  const getWtachlistNumber = async () => {
+    const response = await MockAPI.get("/library/tvshows");
+    handleNumber(response.data.length);
+  };
+  getWtachlistNumber();
   return (
     <div>
       <h1 className="airing-today-text">Airing today</h1>

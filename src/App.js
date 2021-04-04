@@ -18,7 +18,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar number={number} />
         <Route path="/" exact>
-          <Home />
+          <Home handleNumber={handleNumber} />
         </Route>
         <Route path="/Watchlist" exact>
           <Watchlist handleNumber={handleNumber} />
