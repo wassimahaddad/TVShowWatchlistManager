@@ -15,7 +15,9 @@ const BasicInfo = ({ result }) => {
       </div>
       <div className="result-first-aired">
         <span>First aired: </span>
-        {result.first_air_date}
+        {result.first_air_date !== ""
+          ? result.first_air_date
+          : API.defaultFirstAired}
       </div>
       <div className="result-average-vote">
         <span>Average vote: </span>

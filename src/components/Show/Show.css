@@ -4,6 +4,12 @@
   margin-bottom: 5%;
   padding-bottom: 2%;
 }
+
+.add-to-watchlist:focus,
+.simillar-shows:focus,
+.watch-trailer:focus {
+  outline: none;
+}
 .add-to-watchlist,
 .simillar-shows,
 .watch-trailer {

@@ -9,33 +9,78 @@ import axios from "axios";
 const Show = ({ result }) => {
   const [trailerSuffix, setTrailerSuffix] = useState();
   const [noTrailer, setNoTrailer] = useState();
-
-  const getTrailer = async () => {
+  const [data, setData] = useState({});
+  const [clickedButton, setClickedButton] = useState("");
+  // --------------------------------------------------------------------
+  const getShowDetails = async (e) => {
     const response = await axios.get(
-      `${API.baseUrl}${result.id}?api_key=${API.apiKey}${API.appendVideo}`
+      `${API.baseUrl}${result.id}${API.apiKey}${API.appendVideo}`
     );
-    if (response.data.videos.results[0]) {
-      setTrailerSuffix(response.data.videos.results[0].key);
+    console.log(response.data);
+    setData(response.data);
+    return response.data;
+  };
+  // --------------------------------------------------------------------
+  const getTrailerDetails = async (e) => {
+    if (data === {} || result.id !== data.id) {
+      const response = await getShowDetails();
+      console.log(response);
+      if (response.videos.results[0]) {
+        setTrailerSuffix(response.videos.results[0].key);
+      } else {
+        setNoTrailer(API.defaultTrailer);
+      }
+      setClickedButton(e.target.name);
+      console.log(e.target.name);
     } else {
-      setNoTrailer("Trailer not available for this show");
+      if (data.videos.results[0]) {
+        setTrailerSuffix(data.videos.results[0].key);
+      } else {
+        setNoTrailer(API.defaultTrailer);
+      }
+      setClickedButton(e.target.name);
     }
   };
-
+  // --------------------------------------------------------------------
+  const AddToWatchlist = async () => {
+    if (data === {} || result.id !== data.id) {
+      const response = await getShowDetails();
+      console.log(response);
+    } else {
+      console.log(data.name);
+    }
+  };
+  // --------------------------------------------------------------------
   return (
     <div className="search-result">
       <Poster result={result} />
+
       <div className="result-trailer">
-        {trailerSuffix ? <Trailer suffix={trailerSuffix} /> : null}
+        {trailerSuffix && clickedButton === "trailer" ? (
+          <Trailer suffix={trailerSuffix} />
+        ) : null}
         {noTrailer ? <>{noTrailer}</> : null}
       </div>
+
       <div>
         <BasicInfo result={result} />
+
         <div className="show-result-buttons">
-          <button className="add-to-watchlist">Add to Watch List</button>
-          <button onClick={getTrailer} className="watch-trailer">
+          <button
+            className="add-to-watchlist"
+            onClick={AddToWatchlist}
+            name="watchlist"
+          >
+            Add to Watch List
+          </button>
+          <button
+            onClick={getTrailerDetails}
+            className="watch-trailer"
+            name="trailer"
+          >
             Watch Trailer
           </button>
-          <button className="simillar-shows">Show Similar</button>
+          <button className="simillar-shows">More Information</button>
         </div>
       </div>
     </div>
