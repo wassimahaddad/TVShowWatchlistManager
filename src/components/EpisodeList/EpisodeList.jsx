@@ -24,6 +24,7 @@ const EpisodeList = ({ watchlist, time }) => {
               .filter(
                 (item) =>
                   item.in_production &&
+                  item.next_episode_to_air &&
                   item.next_episode_to_air.air_date === today
               )
               .map((item) => (
@@ -43,6 +44,7 @@ const EpisodeList = ({ watchlist, time }) => {
               .filter(
                 (item) =>
                   item.in_production &&
+                  item.next_episode_to_air &&
                   Seconds(item.next_episode_to_air.air_date) -
                     Seconds(today) ===
                     86400000
@@ -63,6 +65,7 @@ const EpisodeList = ({ watchlist, time }) => {
               .filter(
                 (item) =>
                   item.in_production &&
+                  item.next_episode_to_air &&
                   Seconds(item.next_episode_to_air.air_date) - Seconds(today) >
                     86400000
               )
