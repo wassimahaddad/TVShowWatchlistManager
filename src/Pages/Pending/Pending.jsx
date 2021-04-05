@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import MockAPI from "../../API/MockAPI";
 import "./Pending.css";
+import EpisodeList from "../../components/EpisodeList/EpisodeList";
 
 const Pending = () => {
+  const [watchlist, setWatchlist] = useState([]);
+  useEffect(() => {
+    const getWtachlistNumber = () => {
+      MockAPI.get("/library/tvshows").then((response) => {
+        setWatchlist(response.data);
+        // console.log(response.data);
+      });
+    };
+    getWtachlistNumber();
+  }, []);
   return (
     <div>
-      <h1 className="pending-episodes-text">Pending episodes</h1>
-      <div className="pending-episodes">No pending episodes at the moment</div>
+      <h1 className="pending-episodes-text">
+        Pending episodes<span>Watched</span>
+      </h1>
+      <div className="pending-episodes">
+        <EpisodeList watchlist={watchlist} time="previous" />
+      </div>
     </div>
   );
 };

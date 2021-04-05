@@ -35,6 +35,25 @@ const EpisodeList = ({ watchlist, time }) => {
           </React.Fragment>
         </div>
       );
+    case "previous":
+      return (
+        <div>
+          <React.Fragment>
+            {watchlist
+              .filter(
+                (item) =>
+                  item.in_production &&
+                  item.next_episode_to_air &&
+                  item.next_episode_to_air.air_date < today
+              )
+              .map((item) => (
+                <div key={item.idmock} cbclass="episode-checkbox">
+                  <Episode item={item} />
+                </div>
+              ))}
+          </React.Fragment>
+        </div>
+      );
 
     case "tomorrow":
       return (
