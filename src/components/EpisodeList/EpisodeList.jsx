@@ -21,7 +21,11 @@ const EpisodeList = ({ watchlist, time }) => {
         <div>
           <React.Fragment>
             {watchlist
-              .filter((item) => item.next_episode_to_air.air_date === today)
+              .filter(
+                (item) =>
+                  item.in_production &&
+                  item.next_episode_to_air.air_date === today
+              )
               .map((item) => (
                 <div key={item.idmock} cbclass="episode-checkbox">
                   <Episode item={item} />
@@ -38,9 +42,10 @@ const EpisodeList = ({ watchlist, time }) => {
             {watchlist
               .filter(
                 (item) =>
+                  item.in_production &&
                   Seconds(item.next_episode_to_air.air_date) -
                     Seconds(today) ===
-                  86400000
+                    86400000
               )
               .map((item) => (
                 <div key={item.idmock}>
@@ -57,8 +62,9 @@ const EpisodeList = ({ watchlist, time }) => {
             {watchlist
               .filter(
                 (item) =>
+                  item.in_production &&
                   Seconds(item.next_episode_to_air.air_date) - Seconds(today) >
-                  86400000
+                    86400000
               )
 
               .map((item) => (
