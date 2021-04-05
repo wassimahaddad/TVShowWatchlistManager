@@ -1,13 +1,23 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useState, useEffect } from "react";
 import MockAPI from "../../API/MockAPI";
 import "./Home.css";
 
 const Home = ({ handleNumber }) => {
-  const getWtachlistNumber = async () => {
-    const response = await MockAPI.get("/library/tvshows");
-    handleNumber(response.data.length);
-  };
-  getWtachlistNumber();
+  const [watchlist, setWatchlist] = useState([]);
+  useEffect(() => {
+    const getWtachlistNumber = async () => {
+      const response = await MockAPI.get("/library/tvshows");
+      setWatchlist(response.data);
+
+      handleNumber(response.data.length);
+
+      console.log(response.data);
+    };
+    getWtachlistNumber();
+  }, []);
+
   return (
     <div>
       <h1 className="airing-today-text">Airing today</h1>
