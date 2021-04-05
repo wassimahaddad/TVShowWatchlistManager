@@ -20,12 +20,20 @@ const Home = ({ handleNumber }) => {
 
   return (
     <div>
-      <h1 className="airing-today-text">Airing today</h1>
+      <h1 className="airing-today-text">
+        Airing today<span>Watched</span>
+      </h1>
       <div className="airing-today">
-        <EpisodeList watchlist={watchlist} />
+        <EpisodeList watchlist={watchlist} time="today" />
       </div>
-      <h1 className="airing-next-text">Airing in the next days</h1>
-      <div className="airing-next">No new episodes at the moment</div>
+      <h1 className="airing-tomorrow-text">Airing tomorrow</h1>
+      <div className="airing-tomorrow">
+        <EpisodeList watchlist={watchlist} time="tomorrow" />
+      </div>
+      <h1 className="airing-next-text">Airing next</h1>
+      <div className="airing-next">
+        <EpisodeList watchlist={watchlist} time="nextdays" />
+      </div>
     </div>
   );
 };

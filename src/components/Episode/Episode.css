@@ -1,0 +1,28 @@
+.episode-details {
+  display: inline-block;
+  width: 93%;
+  font-size: 25px;
+}
+
+.episode-airdate {
+  display: inline-flex;
+}
+.episode-name {
+  display: inline-flex;
+  margin-left: 50px;
+}
+.episode-se {
+  display: inline-flex;
+  margin-left: 5px;
+}
+
+.episode-checkbox {
+  display: inline-block;
+  width: 10%;
+}
+.episode-watched {
+}
+
+.hidden {
+  display: none;
+}
