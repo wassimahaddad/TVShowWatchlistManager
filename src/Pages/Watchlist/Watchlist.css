@@ -1,5 +1,6 @@
 .watchlist-items {
   display: flex;
+  flex-flow: wrap;
   margin-top: 30px;
   justify-content: center;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import Show from "../Show/Show";
+import Show from "../../components/Show/Show";
 import tmdb from "../../API/TMDB";
 import "./Search.css";
 const Search = ({ number, handleNumber }) => {

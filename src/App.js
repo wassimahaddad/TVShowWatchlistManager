@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import Search from "./components/Search/Search";
-import Pending from "./components/Pending/Pending";
-import Watchlist from "./components/Watchlist/Watchlist";
+import Home from "./Pages/Home/Home";
+import Search from "./Pages/Search/Search";
+import Pending from "./Pages/Pending/Pending";
+import Watchlist from "./Pages/Watchlist/Watchlist";
 
 import "./App.css";
 
@@ -21,7 +21,7 @@ const App = () => {
           <Home handleNumber={handleNumber} />
         </Route>
         <Route path="/Watchlist" exact>
-          <Watchlist handleNumber={handleNumber} />
+          <Watchlist number={number} handleNumber={handleNumber} />
         </Route>
         <Route path="/Search">
           <Search number={number} handleNumber={handleNumber} />
