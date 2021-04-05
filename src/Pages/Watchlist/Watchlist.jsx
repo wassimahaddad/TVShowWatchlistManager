@@ -20,13 +20,13 @@ const Watchlist = ({ number, handleNumber }) => {
     <div className="watchlist-items">
       {data
         ? data.map((result) => (
-            <div key={result.idmock}>
+            <React.Fragment key={result.idmock}>
               <WatchlistItem
                 number={number}
                 handleNumber={handleNumber}
                 result={result}
               />
-            </div>
+            </React.Fragment>
           ))
         : null}
     </div>

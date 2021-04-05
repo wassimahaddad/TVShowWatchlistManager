@@ -3,4 +3,8 @@
   flex-flow: wrap;
   margin-top: 30px;
   justify-content: center;
+  width: 60%;
+  /* border: 1px solid white; */
+  margin-left: auto;
+  margin-right: auto;
 }

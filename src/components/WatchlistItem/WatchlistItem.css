@@ -3,16 +3,15 @@
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  width: 250px;
-  height: 400px;
-  margin-top: 20px;
-  margin-left: 20px;
+  width: 200px;
+  height: 310px;
+
   padding-top: 10px;
 }
 
 .watchlist-item-poster {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 .watchlist-item img {
   max-width: 100%;
@@ -21,9 +20,9 @@
 
 .watchlist-item-button {
   margin-top: 2px;
-  font-size: 18px;
-  width: 100%;
-  padding: 3px;
+  font-size: 16px;
+  width: 90%;
+  padding: 1px;
 }
 
 .watchlist-item-button:focus {
