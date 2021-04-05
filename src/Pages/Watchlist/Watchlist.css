@@ -1,7 +1,7 @@
 .watchlist-items {
   display: flex;
   flex-flow: wrap;
-  margin-top: 30px;
+  margin-top: 150px;
   justify-content: center;
   width: 60%;
   /* border: 1px solid white; */
