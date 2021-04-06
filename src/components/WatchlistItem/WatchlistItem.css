@@ -29,3 +29,7 @@
 .watchlist-item-button:focus {
   outline: none;
 }
+
+.watchlist-goto {
+  text-decoration: none;
+}

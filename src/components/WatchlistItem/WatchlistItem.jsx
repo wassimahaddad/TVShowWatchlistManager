@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Poster from "../Poster/Poster";
 import MockAPI from "../../API/MockAPI";
 import "./WatchlistItem.css";
@@ -9,16 +10,18 @@ const WatchlistItem = ({ result, number, handleNumber }) => {
     handleNumber((number = number - 1));
   };
   return (
-    <div className="watchlist-item">
-      <Poster className="watchlist-item-poster" result={result} />
-      <button
-        id={result.idmock}
-        onClick={removeItem}
-        className="watchlist-item-button"
-      >
-        Remove from Watchlist
-      </button>
-    </div>
+    <Link className="watchlist-goto" to={`/Watchlist/${result.id}`}>
+      <div className="watchlist-item">
+        <Poster className="watchlist-item-poster" result={result} />
+        <button
+          id={result.idmock}
+          onClick={removeItem}
+          className="watchlist-item-button"
+        >
+          Remove from Watchlist
+        </button>
+      </div>
+    </Link>
   );
 };
 

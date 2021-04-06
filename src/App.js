@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Seasons from "./components/Seasons/Seasons";
 import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
 import Previous from "./Pages/Previous/Previous";
@@ -22,6 +23,9 @@ const App = () => {
         </Route>
         <Route path="/Watchlist" exact>
           <Watchlist number={number} handleNumber={handleNumber} />
+        </Route>
+        <Route path="/Watchlist/:id">
+          <Seasons number={number} handleNumber={handleNumber} />
         </Route>
         <Route path="/Search">
           <Search number={number} handleNumber={handleNumber} />

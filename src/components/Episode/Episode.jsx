@@ -15,7 +15,6 @@ const Episode = ({ item, cbclass }) => {
           item.next_episode_to_air.season_number
         )}E${pad(item.next_episode_to_air.episode_number)}`}</div>
       </div>
-
       <input className={cbclass} type="checkbox" />
     </>
   );
