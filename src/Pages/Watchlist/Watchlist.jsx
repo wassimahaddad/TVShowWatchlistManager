@@ -1,16 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import MockAPI from "../../API/MockAPI";
 import "./Watchlist.css";
 import WatchlistItem from "../../components/WatchlistItem/WatchlistItem";
 
-const Watchlist = ({ number, handleNumber }) => {
+const Watchlist = ({ number, handleNumber, handleCurrentShow }) => {
   const [data, setData] = useState();
   // --------------------
   useEffect(() => {
     const getWtachlist = async () => {
       const response = await MockAPI.get("/library/tvshows");
       setData(response.data);
-      handleNumber(response.data.length);
     };
     getWtachlist();
   }, [handleNumber]);
@@ -24,6 +24,7 @@ const Watchlist = ({ number, handleNumber }) => {
               <WatchlistItem
                 number={number}
                 handleNumber={handleNumber}
+                handleCurrentShow={handleCurrentShow}
                 result={result}
               />
             </React.Fragment>

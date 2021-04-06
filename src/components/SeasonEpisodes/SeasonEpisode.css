@@ -10,7 +10,7 @@
 }
 .season-episodes {
   width: 50%;
-  /* height: 30vh; */
+  font-size: 25px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;

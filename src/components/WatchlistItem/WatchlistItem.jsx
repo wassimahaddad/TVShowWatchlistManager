@@ -4,7 +4,7 @@ import Poster from "../Poster/Poster";
 import MockAPI from "../../API/MockAPI";
 import "./WatchlistItem.css";
 
-const WatchlistItem = ({ result, number, handleNumber }) => {
+const WatchlistItem = ({ result, number, handleNumber, handleCurrentShow }) => {
   const removeItem = async () => {
     await MockAPI.delete(`/library/tvshows/${result.idmock}`);
     handleNumber((number = number - 1));
@@ -12,7 +12,11 @@ const WatchlistItem = ({ result, number, handleNumber }) => {
   return (
     <div className="watchlist-item">
       <Link className="watchlist-goto" to={`/Watchlist/${result.id}`}>
-        <Poster className="watchlist-item-poster" result={result} />
+        <Poster
+          handleCurrentShow={handleCurrentShow}
+          className="watchlist-item-poster"
+          result={result}
+        />
       </Link>
       <button
         id={result.idmock}

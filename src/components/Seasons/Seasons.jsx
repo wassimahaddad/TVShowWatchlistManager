@@ -7,17 +7,17 @@ import "./Seasons.css";
 
 import Season from "../Season/Season";
 
-const Seasons = () => {
+const Seasons = ({ currentShow }) => {
   const { goBack, location } = useHistory();
   const [data, setData] = useState("");
-
+  //   const [currentSeason, setCurrentSeason] = useState([]);
   // --------------------
   const showId = location.pathname.replace("/Watchlist/", "");
   useEffect(() => {
     const getSeasons = async () => {
       const response = await axios.get(tmdb.baseUrl + showId + tmdb.apiKey);
       setData(response.data);
-      console.log(data);
+      console.log(currentShow);
     };
     getSeasons();
   }, []);
@@ -27,7 +27,9 @@ const Seasons = () => {
       <h1 className="seasons-text">Seasons</h1>
       <div className="seasons">
         {data.seasons
-          ? data.seasons.map((item) => <Season id={showId} name={item.name} />)
+          ? data.seasons.map((item) => (
+              <Season id={showId} name={item.name} currentShow={currentShow} />
+            ))
           : null}
       </div>
       <div className="seasons-button" onClick={() => goBack()}>
