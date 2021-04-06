@@ -10,8 +10,7 @@ const SeasonEpisodes = ({ currentShow }) => {
   const [data, setData] = useState({});
   const showId = location.pathname.split("/")[2];
   const seasonId = location.pathname.split("/")[3].replace("Season", "");
-  console.log(showId, seasonId);
-  console.log(currentShow);
+  // --------------------
   useEffect(() => {
     const getEpisodes = async () => {
       const response = await axios.get(
@@ -22,16 +21,21 @@ const SeasonEpisodes = ({ currentShow }) => {
     };
     getEpisodes();
   }, []);
-
+  // --------------------
   return (
     <div>
-      <h1 className="season-episodes-text">Episodes</h1>
+      <h1 className="season-episodes-text">
+        Episodes<span>Watched</span>
+      </h1>
       <div className="season-episodes">
         {data.episodes
           ? data.episodes.map((item) => (
-              <div
-                key={item.episode_number}
-              >{`${currentShow.original_name}, Episode ${item.episode_number}, ${item.name}`}</div>
+              <React.Fragment key={item.episode_number}>
+                <div className="season-episodes-line">{`${currentShow.original_name}, Episode ${item.episode_number}, ${item.name}`}</div>
+                <div className="season-episodes-checkbox">
+                  <input type="checkbox" />
+                </div>
+              </React.Fragment>
             ))
           : null}
       </div>

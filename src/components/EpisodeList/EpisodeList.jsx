@@ -10,9 +10,9 @@ const EpisodeList = ({ watchlist, time }) => {
   today = yyyy + "-" + mm + "-" + dd;
   //   ------
 
-  const Seconds = (date) => {
+  const Days = (date) => {
     const a = new Date(date);
-    return a;
+    return a / 86400000;
   };
 
   switch (time) {
@@ -64,9 +64,7 @@ const EpisodeList = ({ watchlist, time }) => {
                 (item) =>
                   item.in_production &&
                   item.next_episode_to_air &&
-                  Seconds(item.next_episode_to_air.air_date) -
-                    Seconds(today) ===
-                    86400000
+                  Days(item.next_episode_to_air.air_date) - Days(today) === 1
               )
               .map((item) => (
                 <div key={item.idmock}>
@@ -85,8 +83,7 @@ const EpisodeList = ({ watchlist, time }) => {
                 (item) =>
                   item.in_production &&
                   item.next_episode_to_air &&
-                  Seconds(item.next_episode_to_air.air_date) - Seconds(today) >
-                    86400000
+                  Days(item.next_episode_to_air.air_date) - Days(today) > 1
               )
 
               .map((item) => (

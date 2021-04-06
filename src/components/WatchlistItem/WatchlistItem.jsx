@@ -9,6 +9,7 @@ const WatchlistItem = ({ result, number, handleNumber, handleCurrentShow }) => {
     await MockAPI.delete(`/library/tvshows/${result.idmock}`);
     handleNumber((number = number - 1));
   };
+  // --------------------
   return (
     <div className="watchlist-item">
       <Link className="watchlist-goto" to={`/Watchlist/${result.id}`}>

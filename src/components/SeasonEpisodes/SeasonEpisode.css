@@ -37,3 +37,12 @@
 .season-episodes a:hover {
   color: white;
 }
+
+.season-episodes-line {
+  display: inline-block;
+  width: 90%;
+}
+.season-episodes-checkbox {
+  display: inline-block;
+  width: 10%;
+}

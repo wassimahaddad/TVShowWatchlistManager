@@ -7,6 +7,7 @@ import EpisodeList from "../../components/EpisodeList/EpisodeList";
 
 const Home = ({ handleNumber }) => {
   const [watchlist, setWatchlist] = useState([]);
+  // --------------------
   useEffect(() => {
     const getWtachlistNumber = () => {
       MockAPI.get("/library/tvshows").then((response) => {
@@ -17,7 +18,7 @@ const Home = ({ handleNumber }) => {
     };
     getWtachlistNumber();
   }, []);
-
+  // --------------------
   return (
     <div>
       <h1 className="airing-today-text">

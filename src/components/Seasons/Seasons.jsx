@@ -10,7 +10,6 @@ import Season from "../Season/Season";
 const Seasons = ({ currentShow }) => {
   const { goBack, location } = useHistory();
   const [data, setData] = useState("");
-  //   const [currentSeason, setCurrentSeason] = useState([]);
   // --------------------
   const showId = location.pathname.replace("/Watchlist/", "");
   useEffect(() => {
@@ -21,7 +20,7 @@ const Seasons = ({ currentShow }) => {
     };
     getSeasons();
   }, []);
-
+  // --------------------
   return (
     <div>
       <h1 className="seasons-text">Seasons</h1>
