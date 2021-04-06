@@ -1,4 +1,4 @@
-.pending-episodes-text {
+.previous-episodes-text {
   display: flex;
   justify-content: space-between;
   width: 50%;
@@ -7,7 +7,7 @@
   margin-right: auto;
   color: goldenrod;
 }
-.pending-episodes {
+.previous-episodes {
   width: 50%;
   height: 30vh;
   border-top: 1px solid grey;

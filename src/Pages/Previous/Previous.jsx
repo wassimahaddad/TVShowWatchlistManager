@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MockAPI from "../../API/MockAPI";
-import "./Pending.css";
+import "./Previous.css";
 import EpisodeList from "../../components/EpisodeList/EpisodeList";
 
 const Pending = () => {
@@ -16,10 +16,10 @@ const Pending = () => {
   }, []);
   return (
     <div>
-      <h1 className="pending-episodes-text">
-        Pending episodes<span>Watched</span>
+      <h1 className="previous-episodes-text">
+        Previous episodes<span>Watched</span>
       </h1>
-      <div className="pending-episodes">
+      <div className="previous-episodes">
         <EpisodeList watchlist={watchlist} time="previous" />
       </div>
     </div>

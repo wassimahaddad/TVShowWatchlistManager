@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
-import Pending from "./Pages/Pending/Pending";
+import Previous from "./Pages/Previous/Previous";
 import Watchlist from "./Pages/Watchlist/Watchlist";
 
 import "./App.css";
@@ -26,8 +26,8 @@ const App = () => {
         <Route path="/Search">
           <Search number={number} handleNumber={handleNumber} />
         </Route>
-        <Route path="/Pending" exact>
-          <Pending />
+        <Route path="/Previous" exact>
+          <Previous />
         </Route>
       </BrowserRouter>
     </div>
