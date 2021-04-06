@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/Watchlist/:id" exact>
           <Seasons number={number} handleNumber={handleNumber} />
         </Route>
-        <Route path="/Watchlist/:id/">
+        <Route path="/Watchlist/:id/:name">
           <SeasonEpisodes />
         </Route>
         <Route path="/Search">
