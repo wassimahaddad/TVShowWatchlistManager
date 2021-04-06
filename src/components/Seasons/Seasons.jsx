@@ -27,8 +27,14 @@ const Seasons = ({ currentShow }) => {
       <h1 className="seasons-text">Seasons</h1>
       <div className="seasons">
         {data.seasons
-          ? data.seasons.map((item) => (
-              <Season id={showId} name={item.name} currentShow={currentShow} />
+          ? data.seasons.map((item, i) => (
+              <React.Fragment key={`${showId}${i}`}>
+                <Season
+                  id={showId}
+                  name={item.name}
+                  currentShow={currentShow}
+                />
+              </React.Fragment>
             ))
           : null}
       </div>
