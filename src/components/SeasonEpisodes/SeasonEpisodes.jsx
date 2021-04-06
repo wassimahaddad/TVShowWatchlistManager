@@ -22,6 +22,8 @@ const SeasonEpisodes = ({ currentShow }) => {
     getEpisodes();
   }, []);
   // --------------------
+  const pad = (n) => (n < 10 ? "0" + n : n);
+  // --------------------
   return (
     <div>
       <h1 className="season-episodes-text">
@@ -31,7 +33,11 @@ const SeasonEpisodes = ({ currentShow }) => {
         {data.episodes
           ? data.episodes.map((item) => (
               <React.Fragment key={item.episode_number}>
-                <div className="season-episodes-line">{`${currentShow.original_name}, Episode ${item.episode_number}, ${item.name}`}</div>
+                <div className="season-episodes-line">{`${
+                  currentShow.original_name
+                }  |  Episode ${pad(item.episode_number)}  |  ${
+                  item.air_date
+                }  |  ${item.name}`}</div>
                 <div className="season-episodes-checkbox">
                   <input type="checkbox" />
                 </div>

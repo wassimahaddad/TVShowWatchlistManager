@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Season = ({ name, id, currentShow }) => {
   return (
     <Link to={`/Watchlist/${id}/${name.replace(" ", "")}`}>
-      <div className="season-name">{`${currentShow.original_name}, ${name}`}</div>
+      <div className="season-name">{`${currentShow.original_name} | ${name}`}</div>
     </Link>
   );
 };
