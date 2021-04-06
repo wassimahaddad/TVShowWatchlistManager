@@ -10,18 +10,18 @@ const WatchlistItem = ({ result, number, handleNumber }) => {
     handleNumber((number = number - 1));
   };
   return (
-    <Link className="watchlist-goto" to={`/Watchlist/${result.id}`}>
-      <div className="watchlist-item">
+    <div className="watchlist-item">
+      <Link className="watchlist-goto" to={`/Watchlist/${result.id}`}>
         <Poster className="watchlist-item-poster" result={result} />
-        <button
-          id={result.idmock}
-          onClick={removeItem}
-          className="watchlist-item-button"
-        >
-          Remove from Watchlist
-        </button>
-      </div>
-    </Link>
+      </Link>
+      <button
+        id={result.idmock}
+        onClick={removeItem}
+        className="watchlist-item-button"
+      >
+        Remove from Watchlist
+      </button>
+    </div>
   );
 };
 

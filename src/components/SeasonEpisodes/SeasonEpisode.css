@@ -1,4 +1,4 @@
-.seasons-text {
+.season-episodes-text {
   display: flex;
   justify-content: space-between;
   width: 50%;
@@ -8,14 +8,14 @@
   color: goldenrod;
   border-bottom: 1px solid grey;
 }
-.seasons {
+.season-episodes {
   width: 50%;
   /* height: 30vh; */
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
 }
-.seasons-button {
+.season-episodes-button {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -24,16 +24,16 @@
   cursor: pointer;
 }
 
-.seasons-button > span {
+.season-episodes-button > span {
   font-size: 20px;
   font-weight: normal;
 }
 
-.seasons a {
+.season-episodes a {
   text-decoration: none;
   color: grey;
 }
 
-.seasons a:hover {
+.season-episodes a:hover {
   color: white;
 }
