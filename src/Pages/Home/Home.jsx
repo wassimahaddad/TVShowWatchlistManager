@@ -21,9 +21,7 @@ const Home = ({ handleNumber }) => {
   // --------------------
   return (
     <div>
-      <h1 className="airing-today-text">
-        Airing today<span>Watched</span>
-      </h1>
+      <h1 className="airing-today-text">Airing today</h1>
       <div className="airing-today">
         <EpisodeList watchlist={watchlist} time="today" />
       </div>

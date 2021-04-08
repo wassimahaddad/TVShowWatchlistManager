@@ -7,7 +7,7 @@ import "./Seasons.css";
 
 import Season from "../Season/Season";
 
-const Seasons = ({ currentShow }) => {
+const Seasons = ({ currentShow, handleIndex }) => {
   const { goBack, location } = useHistory();
   const [data, setData] = useState("");
   // --------------------
@@ -16,6 +16,7 @@ const Seasons = ({ currentShow }) => {
     const getSeasons = async () => {
       const response = await axios.get(tmdb.baseUrl + showId + tmdb.apiKey);
       setData(response.data);
+
       console.log(currentShow);
     };
     getSeasons();
@@ -32,6 +33,8 @@ const Seasons = ({ currentShow }) => {
                   id={showId}
                   name={item.name}
                   currentShow={currentShow}
+                  index={i}
+                  handleIndex={handleIndex}
                 />
               </React.Fragment>
             ))

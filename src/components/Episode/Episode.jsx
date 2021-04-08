@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import "./Episode.css";
 
 const Episode = ({ item, cbclass }) => {
-  //   console.log(item.next_episode_to_air);
   const pad = (n) => (n < 10 ? "0" + n : n);
+
   return (
     <>
       <div className="episode-details">
@@ -15,7 +16,18 @@ const Episode = ({ item, cbclass }) => {
           item.next_episode_to_air.season_number
         )}E${pad(item.next_episode_to_air.episode_number)}`}</div>
       </div>
-      <input className={cbclass} type="checkbox" />
+      {/* <input
+        onChange={checkedState}
+        ref={cbRef}
+        className={cbclass}
+        type="checkbox"
+
+        // defaultChecked={
+        //   item.seasons[index].episodes
+        //     ? item.seasons[index].episodes[index].watched
+        //     : false
+        // }
+      /> */}
     </>
   );
 };

@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import tmdb from "../../API/TMDB";
 import axios from "axios";
+import MockAPI from "../../API/MockAPI";
 import "./SeasonEpisode.css";
 
-const SeasonEpisodes = ({ currentShow }) => {
+const SeasonEpisodes = ({ currentShow, index }) => {
   const { goBack, location } = useHistory();
   const [data, setData] = useState({});
   const showId = location.pathname.split("/")[2];
@@ -17,12 +18,20 @@ const SeasonEpisodes = ({ currentShow }) => {
         `${tmdb.baseUrl}${showId}/season/${seasonId}${tmdb.apiKey}`
       );
       setData(response.data);
-      console.log(response.data);
     };
     getEpisodes();
-  }, []);
+  }, [currentShow]);
   // --------------------
   const pad = (n) => (n < 10 ? "0" + n : n);
+  const checkedState = (e) => {
+    const obj = { ...currentShow };
+    obj.seasons[index].episodes = [...data.episodes];
+    e.target.checked
+      ? (obj.seasons[index].episodes[e.target.dataset.index].watched = true)
+      : (obj.seasons[index].episodes[e.target.dataset.index].watched = false);
+
+    MockAPI.put(`/library/tvshows/${obj.idmock}`, obj);
+  };
   // --------------------
   return (
     <div>
@@ -31,7 +40,7 @@ const SeasonEpisodes = ({ currentShow }) => {
       </h1>
       <div className="season-episodes">
         {data.episodes
-          ? data.episodes.map((item) => (
+          ? data.episodes.map((item, i) => (
               <React.Fragment key={item.episode_number}>
                 <div className="season-episodes-line">{`${
                   currentShow.original_name
@@ -39,7 +48,17 @@ const SeasonEpisodes = ({ currentShow }) => {
                   item.air_date
                 }  |  ${item.name}`}</div>
                 <div className="season-episodes-checkbox">
-                  <input type="checkbox" />
+                  <input
+                    onChange={checkedState}
+                    data-number={item.episode_number}
+                    data-index={i}
+                    type="checkbox"
+                    defaultChecked={
+                      currentShow.seasons[index].episodes
+                        ? currentShow.seasons[index].episodes[i].watched
+                        : false
+                    }
+                  />
                 </div>
               </React.Fragment>
             ))

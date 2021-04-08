@@ -11,6 +11,7 @@ const Watchlist = ({ number, handleNumber, handleCurrentShow }) => {
     const getWtachlist = async () => {
       const response = await MockAPI.get("/library/tvshows");
       setData(response.data);
+      console.log(response.data);
     };
     getWtachlist();
   }, [handleNumber]);
