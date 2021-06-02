@@ -15,3 +15,10 @@
   margin-right: auto;
   padding-top: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .previous-episodes,
+  .previous-episodes-text {
+    width: 95%;
+  }
+}

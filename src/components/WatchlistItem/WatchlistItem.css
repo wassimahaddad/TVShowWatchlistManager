@@ -1,11 +1,12 @@
 .watchlist-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+
   border-radius: 10px;
   width: 230px;
   height: 360px;
-  padding-top: 10px;
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
 
 .watchlist-goto {
@@ -30,6 +31,8 @@
   padding: 1px;
   color: goldenrod;
   background-color: #111;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .watchlist-item-button:focus {

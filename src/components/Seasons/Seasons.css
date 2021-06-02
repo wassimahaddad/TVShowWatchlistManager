@@ -37,3 +37,11 @@
 .seasons a:hover {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .seasons-text,
+  .seasons,
+  .seasons-button {
+    width: 90%;
+  }
+}

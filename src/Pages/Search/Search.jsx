@@ -3,11 +3,12 @@ import axios from "axios";
 import Show from "../../components/Show/Show";
 import tmdb from "../../API/TMDB";
 import "./Search.css";
+//-----------------------------------------------------------------
 const Search = ({ number, handleNumber }) => {
   const searchBar = useRef();
   const [term, setTerm] = useState("");
   const [results, setResults] = useState();
-
+  //-----------------------------------------------------------------
   useEffect(() => {
     searchBar.current.focus();
     const getShowData = async () => {
@@ -28,7 +29,7 @@ const Search = ({ number, handleNumber }) => {
       clearTimeout(timeoutId);
     };
   }, [term]);
-
+  //-----------------------------------------------------------------
   return (
     <div>
       <div className="search-bar">

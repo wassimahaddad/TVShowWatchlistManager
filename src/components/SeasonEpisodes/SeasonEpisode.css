@@ -46,3 +46,21 @@
   display: inline-block;
   width: 7%;
 }
+
+@media only screen and (max-width: 600px) {
+  .season-episodes-text,
+  .season-episodes,
+  .season-episodes-button {
+    width: 100%;
+  }
+  .season-episodes-line {
+    width: 70%;
+    font-size: 22px;
+    margin-top: 5px;
+  }
+  .season-episodes-checkbox {
+    width: 7%;
+    margin-left: 50px;
+    vertical-align: top;
+  }
+}

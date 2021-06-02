@@ -26,3 +26,11 @@
 .watchlist-number {
   font-weight: normal;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    font-size: 22px;
+    left: 1%;
+    width: 96%;
+  }
+}

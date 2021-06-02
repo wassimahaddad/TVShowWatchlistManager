@@ -26,3 +26,9 @@
 .hidden {
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .episode-details {
+    font-size: 18px;
+  }
+}

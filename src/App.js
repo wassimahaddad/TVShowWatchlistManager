@@ -15,16 +15,20 @@ const App = () => {
   const [number, setNumber] = useState(0);
   const [currentShow, setCurrentShow] = useState({});
   const [index, setIndex] = useState("");
+
+  //-----------------------------------------------------------------
   const handleNumber = (num) => {
     setNumber(num);
   };
+  //-----------------------------------------------------------------
   const handleCurrentShow = (show) => {
     setCurrentShow(show);
   };
-
+  //-----------------------------------------------------------------
   const handleIndex = (i) => {
     setIndex(i);
   };
+  //-----------------------------------------------------------------
 
   return (
     <div>

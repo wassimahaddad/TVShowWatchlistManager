@@ -48,3 +48,14 @@
   margin-right: auto;
   padding-top: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .airing-today-text,
+  .airing-next,
+  .airing-next-text,
+  .airing-tomorrow,
+  .airing-tomorrow-text,
+  .airing-today {
+    width: 95%;
+  }
+}

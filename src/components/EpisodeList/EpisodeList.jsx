@@ -28,7 +28,7 @@ const EpisodeList = ({ watchlist, time }) => {
                   item.next_episode_to_air.air_date === today
               )
               .map((item, index) => (
-                <div key={item.idmock} cbclass="episode-checkbox">
+                <div key={item.id} cbclass="episode-checkbox">
                   <Episode item={item} index={index} epis={item} />
                 </div>
               ))}

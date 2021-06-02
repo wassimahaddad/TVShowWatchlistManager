@@ -16,9 +16,7 @@ const Pending = () => {
   }, []);
   return (
     <div>
-      <h1 className="previous-episodes-text">
-        Previous episodes<span>Watched</span>
-      </h1>
+      <h1 className="previous-episodes-text">Previous episodes</h1>
       <div className="previous-episodes">
         <EpisodeList watchlist={watchlist} time="previous" />
       </div>
