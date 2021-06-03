@@ -1,8 +1,17 @@
-.airing-today-text {
+.aired-yesterday-text {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  color: goldenrod;
+}
+.airing-today-text {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  /* margin-top: 150px; */
   margin-left: auto;
   margin-right: auto;
   color: goldenrod;

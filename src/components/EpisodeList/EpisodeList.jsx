@@ -16,6 +16,30 @@ const EpisodeList = ({ watchlist, time }) => {
   };
 
   switch (time) {
+    case "yesterday":
+      return (
+        <div>
+          <React.Fragment>
+            {watchlist
+              .filter(
+                (item) =>
+                  item.in_production &&
+                  item.next_episode_to_air &&
+                  Days(today) - Days(item.last_episode_to_air.air_date) === 1
+              )
+              .map((item, index) => (
+                <div key={item.id} cbclass="episode-checkbox">
+                  <Episode
+                    item={item}
+                    index={index}
+                    epis={item}
+                    previous="yes"
+                  />
+                </div>
+              ))}
+          </React.Fragment>
+        </div>
+      );
     case "today":
       return (
         <div>
@@ -84,7 +108,7 @@ const EpisodeList = ({ watchlist, time }) => {
                 (item) =>
                   item.in_production &&
                   item.next_episode_to_air &&
-                  Days(item.next_episode_to_air.air_date) - Days(today) > 1
+                  Days(item.next_episode_to_air.air_date) - Days(today) > 0
               )
 
               .map((item) => (

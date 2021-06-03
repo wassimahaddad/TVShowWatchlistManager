@@ -34,14 +34,18 @@ const Home = ({ handleNumber }) => {
   // --------------------
   return (
     <div>
+      <h1 className="aired-yesterday-text">Aired yesterday</h1>
+      <div className="airing-today">
+        <EpisodeList watchlist={watchlist} time="yesterday" />
+      </div>
       <h1 className="airing-today-text">Airing today</h1>
       <div className="airing-today">
         <EpisodeList watchlist={watchlist} time="today" />
       </div>
-      <h1 className="airing-tomorrow-text">Airing tomorrow</h1>
+      {/* <h1 className="airing-tomorrow-text">Airing tomorrow</h1>
       <div className="airing-tomorrow">
         <EpisodeList watchlist={watchlist} time="tomorrow" />
-      </div>
+      </div> */}
       <h1 className="airing-next-text">Airing next</h1>
       <div className="airing-next">
         <EpisodeList watchlist={watchlist} time="nextdays" />
