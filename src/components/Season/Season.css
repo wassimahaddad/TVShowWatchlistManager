@@ -4,6 +4,7 @@
 
 @media only screen and (max-width: 600px) {
   .season-name {
-    font-size: 25px;
+    font-size: 18px;
+    margin-top: 5px;
   }
 }

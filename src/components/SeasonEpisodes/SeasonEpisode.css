@@ -54,13 +54,24 @@
     width: 100%;
   }
   .season-episodes-line {
-    width: 70%;
-    font-size: 22px;
+    width: 80%;
+    font-size: 18px;
     margin-top: 5px;
+    margin-left: 5px;
   }
   .season-episodes-checkbox {
     width: 7%;
-    margin-left: 50px;
+    margin-left: 40px;
     vertical-align: top;
+  }
+  .season-episodes-button {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
+
+  .season-episodes-text {
+    font-weight: normal;
+    font-size: 25px;
   }
 }

@@ -44,4 +44,15 @@
   .seasons-button {
     width: 90%;
   }
+
+  .seasons-text {
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+  .seasons-button {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
