@@ -69,7 +69,7 @@ const EpisodeList = ({ watchlist, time }) => {
                   item.in_production &&
                   item.next_episode_to_air &&
                   (item.next_episode_to_air.air_date < today ||
-                    item.last_air_date < today)
+                    Days(today) - Days(item.last_air_date) > 1)
               )
               .map((item) => (
                 <div key={item.idmock} cbclass="episode-checkbox">
