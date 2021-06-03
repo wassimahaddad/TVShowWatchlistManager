@@ -31,4 +31,7 @@
   .episode-details {
     font-size: 18px;
   }
+  .episode-name {
+    margin-left: 25px;
+  }
 }
