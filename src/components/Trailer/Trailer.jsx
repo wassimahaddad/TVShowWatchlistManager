@@ -5,8 +5,8 @@ const Trailer = ({ suffix }) => {
   return (
     <iframe
       className="result-youtube"
-      width="560"
-      height="315"
+      // width="560"
+      // height="315"
       src={`https://www.youtube.com/embed/${suffix}`}
       title="YouTube video player"
       frameBorder="0"

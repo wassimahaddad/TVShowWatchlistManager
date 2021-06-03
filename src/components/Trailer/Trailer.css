@@ -5,3 +5,19 @@
   vertical-align: top;
   margin-top: 7%;
 }
+
+.result-youtube {
+  width: 560px;
+  height: 315px;
+}
+@media only screen and (max-width: 600px) {
+  .result-trailer {
+    display: block;
+  }
+
+  .result-youtube {
+    width: 380px;
+    height: 214px;
+    margin-left: 5px;
+  }
+}

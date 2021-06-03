@@ -42,3 +42,11 @@
 .watchlist-goto {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .watchlist-item {
+    width: 3500px;
+    height: 500px;
+    flex-wrap: wrap;
+  }
+}
