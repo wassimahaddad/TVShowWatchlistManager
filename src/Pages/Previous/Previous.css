@@ -21,4 +21,9 @@
   .previous-episodes-text {
     width: 95%;
   }
+
+  .previous-episodes-text {
+    font-size: 25px;
+    font-weight: normal;
+  }
 }
