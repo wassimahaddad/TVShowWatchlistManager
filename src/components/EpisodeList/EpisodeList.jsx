@@ -44,11 +44,12 @@ const EpisodeList = ({ watchlist, time }) => {
                 (item) =>
                   item.in_production &&
                   item.next_episode_to_air &&
-                  item.next_episode_to_air.air_date < today
+                  (item.next_episode_to_air.air_date < today ||
+                    item.last_air_date < today)
               )
               .map((item) => (
                 <div key={item.idmock} cbclass="episode-checkbox">
-                  <Episode item={item} />
+                  <Episode item={item} previous="yes" />
                 </div>
               ))}
           </React.Fragment>
